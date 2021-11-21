@@ -1,20 +1,18 @@
-import './App.css';
+import React from 'react';
 
-import useLocalStorage from './cutomHooks/useLocalStorage';
-import useUpdateLogger from './cutomHooks/useUpdateLogger';
+import './App.css';
+import CustomHookUse from './concepts/CustomHookUse';
+import UseMemoExample from './concepts/UseMemoExample';
+import UseRefExample from './concepts/UseRefExample';
 
 const App = () => {
-  const [inputVal, setInputVal] = useLocalStorage('name', () => '');
-
-  useUpdateLogger(inputVal);
 
   return (
-    <div>
-      <input 
-        type="text" 
-        value={inputVal} 
-        onChange={(e) => setInputVal(e.target.value)}/>
-    </div>
+    <React.Fragment>
+      {/* <CustomHookUse/> */}
+      {/* <UseMemoExample /> */}
+      <UseRefExample age="33" />
+    </React.Fragment>
   );
 }
 
